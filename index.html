@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kumpulan Web Tools Gratis</title>
+<meta name="description" content="Kumpulan tools online gratis: analisis teks, manajemen web, SEO, domain, gambar, cek website, PDF converter, konverter unit, dan binary translator.">
+<meta name="theme-color" content="#4f46e5">
+<style>
+:root{
+  --primary:#4f46e5;--primary-600:#4338ca;--primary-100:#e0e7ff;
+  --bg:#f5f7fb;--surface:#ffffff;--text:#0f172a;--muted:#64748b;
+  --border:#e2e8f0;--ok:#059669;--err:#dc2626;--chip:#eef2ff;
+  --radius:14px;--shadow:0 1px 2px rgba(15,23,42,.04),0 4px 16px rgba(15,23,42,.06);
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --primary:#818cf8;--primary-600:#6366f1;--primary-100:#1e1b4b;
+    --bg:#0b1020;--surface:#131a2e;--text:#e2e8f0;--muted:#94a3b8;
+    --border:#243049;--ok:#34d399;--err:#f87171;--chip:#1e2a47;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 16px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+[hidden]{display:none!important}
+
+/* Header */
+header{position:sticky;top:0;z-index:10;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;box-shadow:0 2px 12px rgba(79,70,229,.25)}
+.bar{max-width:1080px;margin:0 auto;padding:14px 20px 0}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.brand h1{font-size:1.2rem;margin:0;font-weight:700;letter-spacing:-.01em}
+.brand small{opacity:.8;font-size:.8rem;display:block;font-weight:400}
+nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:0 0 auto;color:#fff;text-decoration:none;background:rgba(255,255,255,.14);padding:7px 14px;border-radius:999px;font-size:.88rem;transition:background .2s}
+nav a:hover{background:rgba(255,255,255,.26)}
+nav a.active{background:#fff;color:var(--primary-600);font-weight:600}
+
+/* Layout */
+main{flex:1;width:100%;max-width:1080px;margin:0 auto;padding:28px 20px 40px}
+.tool{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.tool h2{margin:0 0 4px;font-size:1.4rem;letter-spacing:-.01em}
+.tool > p.lead{color:var(--muted);margin:0 0 20px}
+.tool h3{font-size:.95rem;margin:22px 0 8px;color:var(--text)}
+.section-title{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:24px 0 8px}
+
+/* Form */
+label{display:block;font-size:.88rem;font-weight:600;margin:14px 0 6px;color:var(--text)}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;font:inherit;background:var(--bg);color:var(--text);transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px var(--primary-100)}
+textarea{min-height:130px;resize:vertical;font-family:var(--mono);font-size:.9rem}
+textarea[readonly]{background:var(--bg)}
+input[type=range]{padding:0;accent-color:var(--primary)}
+input[type=file]{padding:9px;background:var(--bg);cursor:pointer}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.muted{color:var(--muted);font-size:.86rem}
+small.muted{display:block;margin-top:4px}
+.ok{color:var(--ok)!important}.err{color:var(--err)!important}
+
+/* Buttons */
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+button,.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--primary);color:#fff;border:0;padding:10px 16px;border-radius:10px;cursor:pointer;font:inherit;font-weight:600;font-size:.9rem;text-decoration:none;transition:background .2s,transform .05s}
+button:hover,.btn:hover{background:var(--primary-600)}
+button:active{transform:scale(.98)}
+button.alt{background:var(--chip);color:var(--text)}
+button.alt:hover{background:var(--border)}
+button.alt[data-act="clear"]{color:var(--err)}
+button.primary-wide{width:100%;margin-top:14px}
+
+/* Stats & results */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:16px 0}
+.card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:14px;text-align:center}
+.card b{display:block;font-size:1.3rem;font-variant-numeric:tabular-nums}
+.card span{font-size:.8rem;color:var(--muted)}
+.chip{display:inline-block;background:var(--chip);color:var(--primary-600);border-radius:999px;padding:4px 12px;margin:3px;font-size:.86rem;font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:10px;display:block;overflow-x:auto}
+th,td{border-bottom:1px solid var(--border);padding:9px 10px;text-align:left;word-break:break-word;vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+img#imgPrev{max-width:100%;margin-top:14px;border-radius:10px;border:1px solid var(--border)}
+.info{margin-top:10px;padding:12px;background:var(--bg);border-radius:10px;font-size:.88rem;color:var(--muted)}
+.note{margin-top:14px;padding:12px 14px;background:var(--chip);border-radius:10px;font-size:.86rem;color:var(--text)}
+.result-big{font-size:1.25rem;font-weight:700;color:var(--primary-600);padding:14px;background:var(--bg);border-radius:12px;text-align:center;margin-top:14px;font-variant-numeric:tabular-nums}
+.linkbtn{background:none;color:var(--primary);padding:0;font-weight:600}
+.linkbtn:hover{background:none;text-decoration:underline}
+
+/* Home grid */
+.home{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:28px}
+.home a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-decoration:none;color:var(--text);box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+.home a:hover{transform:translateY(-2px);border-color:var(--primary)}
+.home strong{display:block;margin-bottom:2px}
+.home span{color:var(--muted);font-size:.85rem}
+
+/* Toast */
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--surface);padding:12px 18px;border-radius:10px;font-size:.9rem;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:50;max-width:90vw}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px;border-top:1px solid var(--border)}
+
+@media (max-width:640px){
+  .row{grid-template-columns:1fr}
+  .tool{padding:20px}
+  .tool h2{font-size:1.25rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="brand">
+      <div>
+        <h1>🧰 Kumpulan Web Tools</h1>
+        <small>Gratis · berjalan di browser · tanpa instalasi</small>
+      </div>
+    </div>
+    <nav id="nav" aria-label="Navigasi tools">
+      <a href="#beranda">Beranda</a>
+      <a href="#teks">Analisis Teks</a>
+      <a href="#web">Manajemen Web</a>
+      <a href="#seo">SEO &amp; Backlink</a>
+      <a href="#domain">Domain</a>
+      <a href="#gambar">Gambar</a>
+      <a href="#website">Cek Website</a>
+      <a href="#pdf">PDF</a>
+      <a href="#unit">Konverter Unit</a>
+      <a href="#biner">Binary</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- BERANDA -->
+<section id="beranda" class="tool-home">
+  <h2 style="margin:0 0 4px;font-size:1.5rem">Pilih tool</h2>
+  <p class="muted" style="margin:0 0 20px">Klik salah satu kartu untuk membuka tool.</p>
+  <div class="home">
+    <a href="#teks"><strong>Analisis Teks</strong><span>Hitung kata, karakter, dan kata kunci</span></a>
+    <a href="#web"><strong>Manajemen Web</strong><span>Encode/decode URL, minify HTML &amp; CSS</span></a>
+    <a href="#seo"><strong>SEO &amp; Backlink</strong><span>Generator meta tag dan anchor link</span></a>
+    <a href="#domain"><strong>Domain Tools</strong><span>Cek record DNS A, MX, TXT, NS, dan lainnya</span></a>
+    <a href="#gambar"><strong>Image Tools</strong><span>Ubah ukuran dan kompres gambar</span></a>
+    <a href="#website"><strong>Cek Website</strong><span>Validasi URL dan cek keterjangkauan</span></a>
+    <a href="#pdf"><strong>PDF Converter</strong><span>Teks dan gambar menjadi PDF</span></a>
+    <a href="#unit"><strong>Konverter Unit</strong><span>Panjang, berat, volume, data, suhu</span></a>
+    <a href="#biner"><strong>Binary Translator</strong><span>Teks ↔ biner ↔ hex</span></a>
+  </div>
+</section>
+
+<!-- 1. ANALISIS TEKS -->
+<section class="tool" id="teks" hidden aria-labelledby="t-teks">
+  <h2 id="t-teks">Analisis Teks</h2>
+  <p class="lead">Tempel teks untuk melihat statistik dan kata kunci, atau gunakan alat format di bawahnya.</p>
+  <label for="teksIn">Teks</label>
+  <textarea id="teksIn" placeholder="Tempel atau ketik teks di sini..."></textarea>
+  <div class="grid" id="teksStat"></div>
+  <div class="btns">
+    <button data-act="upper" class="alt">HURUF BESAR</button>
+    <button data-act="lower" class="alt">huruf kecil</button>
+    <button data-act="title" class="alt">Judul Kapital</button>
+    <button data-act="sentence" class="alt">Kalimat</button>
+    <button data-act="dedup" class="alt">Hapus baris duplikat</button>
+    <button data-act="spasi" class="alt">Rapikan spasi</button>
+    <button data-act="sort" class="alt">Urutkan baris</button>
+    <button data-act="clear" class="alt">Kosongkan</button>
+  </div>
+  <h3>Kata kunci teratas</h3>
+  <div id="teksTop"></div>
+</section>
+
+<!-- 2. MANAJEMEN WEB -->
+<section class="tool" id="web" hidden aria-labelledby="t-web">
+  <h2 id="t-web">Manajemen Web</h2>
+  <p class="lead">Encode/decode URL serta minify HTML atau CSS.</p>
+  <label for="webIn">Input</label>
+  <textarea id="webIn" placeholder="Tempel URL, HTML, atau CSS di sini..."></textarea>
+  <div class="btns">
+    <button data-web="enc">Encode URL</button>
+    <button data-web="dec">Decode URL</button>
+    <button data-web="html">Minify HTML</button>
+    <button data-web="css">Minify CSS</button>
+  </div>
+  <label for="webOut">Hasil</label>
+  <textarea id="webOut" readonly></textarea>
+  <div class="btns"><button id="webCopy" class="alt">Salin hasil</button></div>
+  <p class="note">Minify HTML tidak aman untuk isi tag <code>&lt;pre&gt;</code> atau <code>&lt;textarea&gt;</code>. Gunakan hati-hati pada halaman yang memakainya.</p>
+</section>
+
+<!-- 3. SEO & BACKLINK -->
+<section class="tool" id="seo" hidden aria-labelledby="t-seo">
+  <h2 id="t-seo">SEO &amp; Backlink</h2>
+  <p class="lead">Buat meta tag untuk halaman dan kode anchor link.</p>
+
+  <h3>Generator Meta Tag</h3>
+  <div id="mBox">
+    <label for="mTitle">Judul halaman</label>
+    <input id="mTitle" placeholder="Judul SEO (50–60 karakter)">
+    <small id="mTitleLen" class="muted"></small>
+    <label for="mDesc">Deskripsi</label>
+    <textarea id="mDesc" placeholder="Deskripsi (120–160 karakter)" style="min-height:90px"></textarea>
+    <small id="mDescLen" class="muted"></small>
+    <div class="row">
+      <div><label for="mUrl">URL canonical</label><input id="mUrl" placeholder="https://contoh.com/halaman"></div>
+      <div><label for="mKey">Kata kunci</label><input id="mKey" placeholder="kata, kunci, contoh"></div>
+    </div>
+    <label for="mAuthor">Penulis</label>
+    <input id="mAuthor" placeholder="Nama penulis">
+  </div>
+  <label for="mOut">Kode meta tag</label>
+  <textarea id="mOut" readonly style="min-height:160px"></textarea>
+  <div class="btns"><button id="mCopy" class="alt">Salin meta tag</button></div>
+
+  <h3>Generator Kode Backlink (Anchor)</h3>
+  <div class="row">
+    <div><label for="aUrl">URL tujuan</label><input id="aUrl" placeholder="https://contoh.com"></div>
+    <div><label for="aText">Teks anchor</label><input id="aText" placeholder="Kunjungi situs kami"></div>
+  </div>
+  <label for="aRel">Atribut rel</label>
+  <select id="aRel">
+    <option value="">dofollow (default)</option>
+    <option value="nofollow">nofollow</option>
+    <option value="sponsored">sponsored</option>
+    <option value="ugc">ugc</option>
+  </select>
+  <label for="aOut">Kode HTML</label>
+  <textarea id="aOut" readonly style="min-height:80px"></textarea>
+  <div class="btns"><button id="aCopy" class="alt">Salin anchor</button></div>
+  <p class="note">Jumlah backlink tidak bisa diambil dari browser karena batasan keamanan lintas situs. Gunakan Google Search Console atau API pihak ketiga seperti Ahrefs, Moz, atau Semrush.</p>
+</section>
+
+<!-- 4. DOMAIN -->
+<section class="tool" id="domain" hidden aria-labelledby="t-domain">
+  <h2 id="t-domain">Domain Tools</h2>
+  <p class="lead">Cek record DNS melalui layanan DNS over HTTPS dari Google.</p>
+  <div class="row">
+    <div><label for="dInput">Domain atau URL</label><input id="dInput" placeholder="contoh.com"></div>
+    <div><label for="dType">Tipe record</label>
+      <select id="dType">
+        <option>A</option><option>AAAA</option><option>MX</option>
+        <option>TXT</option><option>NS</option><option>CNAME</option>
+      </select>
+    </div>
+  </div>
+  <div class="btns"><button id="dGo">Cek DNS</button></div>
+  <div id="dOut" aria-live="polite"></div>
+</section>
+
+<!-- 5. GAMBAR -->
+<section class="tool" id="gambar" hidden aria-labelledby="t-gambar">
+  <h2 id="t-gambar">Image Tools</h2>
+  <p class="lead">Ubah ukuran dan format gambar langsung di perangkat Anda. Gambar tidak diunggah ke server.</p>
+  <label for="imgIn">Pilih gambar</label>
+  <input type="file" id="imgIn" accept="image/*">
+  <div class="row">
+    <div><label for="imgW">Lebar maksimal (px)</label><input type="number" id="imgW" value="1280" min="1"></div>
+    <div><label for="imgF">Format output</label>
+      <select id="imgF">
+        <option value="image/webp">WebP</option>
+        <option value="image/jpeg">JPEG</option>
+        <option value="image/png">PNG</option>
+      </select>
+    </div>
+  </div>
+  <label for="imgQ">Kualitas: <span id="imgQv">80</span>%</label>
+  <input type="range" id="imgQ" min="10" max="100" value="80">
+  <div class="btns">
+    <button id="imgGo">Proses gambar</button>
+    <a id="imgDl" class="btn alt" hidden>Unduh hasil</a>
+  </div>
+  <div id="imgInfo" class="info" hidden></div>
+  <img id="imgPrev" hidden alt="Pratinjau hasil">
+</section>
+
+<!-- 6. CEK WEBSITE -->
+<section class="tool" id="website" hidden aria-labelledby="t-website">
+  <h2 id="t-website">Website Checker</h2>
+  <p class="lead">Validasi URL dan periksa apakah server merespons.</p>
+  <label for="wUrl">URL website</label>
+  <input id="wUrl" placeholder="https://contoh.com">
+  <div class="btns"><button id="wGo">Cek website</button></div>
+  <div id="wOut" aria-live="polite"></div>
+  <p class="note">Browser tidak menampilkan kode status HTTP (200/404) karena batasan CORS. Hasil hanya menunjukkan apakah server merespons.</p>
+</section>
+
+<!-- 7. PDF -->
+<section class="tool" id="pdf" hidden aria-labelledby="t-pdf">
+  <h2 id="t-pdf">PDF Converter</h2>
+  <p class="lead">Buat PDF dari teks atau gambar. Membutuhkan internet untuk memuat library jsPDF.</p>
+  <h3>Teks ke PDF</h3>
+  <label for="pdfNama">Nama file</label>
+  <input id="pdfNama" value="dokumen">
+  <label for="pdfTeks">Isi dokumen</label>
+  <textarea id="pdfTeks" placeholder="Tulis teks di sini..."></textarea>
+  <div class="btns"><button id="pdfTxtBtn">Unduh PDF</button></div>
+
+  <h3>Gambar ke PDF</h3>
+  <label for="pdfImg">Pilih gambar JPG/PNG (satu gambar per halaman)</label>
+  <input type="file" id="pdfImg" accept="image/jpeg,image/png" multiple>
+  <div class="btns"><button id="pdfImgBtn">Buat PDF dari gambar</button></div>
+</section>
+
+<!-- 8. KONVERTER UNIT -->
+<section class="tool" id="unit" hidden aria-labelledby="t-unit">
+  <h2 id="t-unit">Konverter Unit</h2>
+  <p class="lead">Konversi otomatis saat angka atau satuan berubah.</p>
+  <label for="uCat">Kategori</label>
+  <select id="uCat">
+    <option value="panjang">Panjang</option>
+    <option value="berat">Berat</option>
+    <option value="volume">Volume</option>
+    <option value="data">Ukuran data</option>
+    <option value="suhu">Suhu</option>
+  </select>
+  <label for="uVal">Nilai</label>
+  <input type="number" id="uVal" value="1" step="any">
+  <div class="row">
+    <div><label for="uFrom">Dari</label><select id="uFrom"></select></div>
+    <div><label for="uTo">Ke</label><select id="uTo"></select></div>
+  </div>
+  <div class="result-big" id="uOut" aria-live="polite">-</div>
+</section>
+
+<!-- 9. BINARY TRANSLATOR -->
+<section class="tool" id="biner" hidden aria-labelledby="t-biner">
+  <h2 id="t-biner">Binary Translator</h2>
+  <p class="lead">Konversi teks ke biner atau hex, dan sebaliknya. Mendukung UTF-8.</p>
+  <label for="bMode">Mode</label>
+  <select id="bMode">
+    <option value="teksBiner">Teks → Biner</option>
+    <option value="binerTeks">Biner → Teks</option>
+    <option value="teksHex">Teks → Hex</option>
+    <option value="hexTeks">Hex → Teks</option>
+  </select>
+  <label for="bIn">Input</label>
+  <textarea id="bIn" placeholder="Contoh biner: 01001000 01101001&#10;Contoh hex: 48 69"></textarea>
+  <div class="btns"><button id="bGo">Konversi</button></div>
+  <label for="bOut">Hasil</label>
+  <textarea id="bOut" readonly></textarea>
+</section>
+
+</main>
+
+<footer>Dibuat dengan HTML, CSS, dan JavaScript murni · Hosting di GitHub Pages</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script>
+/* ============ UTILITAS ============ */
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const val = id => $('#' + id).value.trim();
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function fmtBytes(b){
+  return b < 1024 ? b + ' B' : b < 1048576 ? (b/1024).toFixed(1) + ' KB' : (b/1048576).toFixed(2) + ' MB';
+}
+
+let toastTimer;
+function toast(msg, type = 'info'){
+  const el = $('#toast');
+  el.textContent = msg;
+  el.style.background = type === 'error' ? 'var(--err)' : '';
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2600);
+}
+
+async function copyText(text){
+  if (!text) return toast('Tidak ada yang bisa disalin.', 'error');
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      ta.remove();
+    }
+    toast('Berhasil disalin ke clipboard.');
+  } catch {
+    toast('Gagal menyalin. Salin secara manual.', 'error');
+  }
+}
+
+async function fetchTimeout(url, opts = {}, ms = 8000){
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), ms);
+  try {
+    return await fetch(url, { ...opts, signal: ctrl.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+/* ============ ROUTING ============ */
+function showTool(){
+  const id = location.hash.slice(1) || 'beranda';
+  const sec = document.getElementById(id) || document.getElementById('beranda');
+  $$('section.tool, section.tool-home').forEach(s => s.hidden = (s !== sec));
+  $$('nav a').forEach(a => {
+    const active = a.getAttribute('href') === '#' + sec.id;
+    a.classList.toggle('active', active);
+    if (active) a.scrollIntoView({ block: 'nearest', inline: 'center' });
+  });
+  window.scrollTo({ top: 0, behavior: 'auto' });
+  document.title = (sec.id === 'beranda' ? '' : sec.querySelector('h2')?.textContent + ' · ') + 'Kumpulan Web Tools';
+}
+window.addEventListener('hashchange', showTool);
+
+/* ============ 1. ANALISIS TEKS ============ */
+const STOP = new Set('dan yang di ke dari ini itu dengan untuk pada adalah dalam tidak akan saya kami kita atau juga the and of to in is it for on with as by at be this that a an'.split(' '));
+
+function analisisTeks(t){
+  const kata = t.trim().match(/[\p{L}\p{N}'’-]+/gu) || [];
+  const kalimat = t.split(/[.!?]+/).filter(s => s.trim()).length;
+  const paragraf = t.split(/\n\s*\n/).filter(s => s.trim()).length;
+  const freq = {};
+  kata.forEach(w => {
+    const k = w.toLowerCase();
+    if (k.length > 2 && !STOP.has(k)) freq[k] = (freq[k] || 0) + 1;
+  });
+  const top = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 10);
+  return {
+    kata: kata.length,
+    karakter: t.length,
+    karakterTanpaSpasi: t.replace(/\s/g, '').length,
+    kalimat, paragraf,
+    menit: (kata.length / 200).toFixed(1),
+    top
+  };
+}
+
+const teksIn = $('#teksIn');
+function renderTeks(){
+  const r = analisisTeks(teksIn.value);
+  $('#teksStat').innerHTML = [
+    ['Kata', r.kata], ['Karakter', r.karakter], ['Tanpa spasi', r.karakterTanpaSpasi],
+    ['Kalimat', r.kalimat], ['Paragraf', r.paragraf], ['Waktu baca', r.menit + ' menit']
+  ].map(([l, x]) => `<div class="card"><b>${x}</b><span>${l}</span></div>`).join('');
+  $('#teksTop').innerHTML = r.top.length
+    ? r.top.map(([k, n]) => `<span class="chip">${escapeHtml(k)} (${n})</span>`).join('')
+    : '<p class="muted">Belum ada data.</p>';
+}
+const teksActs = {
+  upper: t => t.toUpperCase(),
+  lower: t => t.toLowerCase(),
+  title: t => t.toLowerCase().replace(/(^|\s)(\S)/g, (m, a, b) => a + b.toUpperCase()),
+  sentence: t => t.toLowerCase().replace(/(^\s*|[.!?]\s+)(\p{L})/gu, (m, a, b) => a + b.toUpperCase()),
+  dedup: t => [...new Set(t.split('\n'))].join('\n'),
+  spasi: t => t.split('\n').map(l => l.replace(/\s+/g, ' ').trim()).join('\n'),
+  sort: t => t.split('\n').sort((a, b) => a.localeCompare(b, 'id')).join('\n'),
+  clear: () => ''
+};
+$$('#teks [data-act]').forEach(b => b.addEventListener('click', () => {
+  teksIn.value = teksActs[b.dataset.act](teksIn.value);
+  renderTeks();
+}));
+teksIn.addEventListener('input', renderTeks);
+
+/* ============ 2. MANAJEMEN WEB ============ */
+const webIn = $('#webIn'), webOut = $('#webOut');
+const webActs = {
+  enc: t => encodeURIComponent(t),
+  dec: t => { try { return decodeURIComponent(t); } catch { throw new Error('format URL tidak valid.'); } },
+  html: t => t.replace(/<!--[\s\S]*?-->/g, '').replace(/>\s+</g, '><').replace(/\s{2,}/g, ' ').trim(),
+  css: t => t.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ').replace(/\s*([{}:;,>])\s*/g, '$1').replace(/;}/g, '}').trim()
+};
+$$('#web [data-web]').forEach(b => b.addEventListener('click', () => {
+  try { webOut.value = webActs[b.dataset.web](webIn.value); }
+  catch (e) { webOut.value = ''; toast('Error: ' + e.message, 'error'); }
+}));
+$('#webCopy').addEventListener('click', () => copyText(webOut.value));
+
+/* ============ 3. SEO & BACKLINK ============ */
+function cekPanjang(id, len, min, max){
+  const el = $('#' + id);
+  const status = len === 0 ? '' : len < min ? '(terlalu pendek)' : len > max ? '(terlalu panjang)' : '(ideal)';
+  el.textContent = `${len} karakter ${status}`.trim();
+  el.className = len === 0 ? 'muted' : (len >= min && len <= max) ? 'ok' : 'err';
+}
+function genMeta(){
+  const t = val('mTitle'), d = val('mDesc'), u = val('mUrl'), k = val('mKey'), a = val('mAuthor');
+  const out = [`<title>${escapeHtml(t)}</title>`];
+  if (d) out.push(`<meta name="description" content="${escapeHtml(d)}">`);
+  if (k) out.push(`<meta name="keywords" content="${escapeHtml(k)}">`);
+  if (a) out.push(`<meta name="author" content="${escapeHtml(a)}">`);
+  if (u) out.push(`<link rel="canonical" href="${escapeHtml(u)}">`);
+  out.push(`<meta property="og:title" content="${escapeHtml(t)}">`);
+  if (d) out.push(`<meta property="og:description" content="${escapeHtml(d)}">`);
+  if (u) out.push(`<meta property="og:url" content="${escapeHtml(u)}">`);
+  $('#mOut').value = out.join('\n');
+  cekPanjang('mTitleLen', t.length, 50, 60);
+  cekPanjang('mDescLen', d.length, 120, 160);
+}
+$$('#mBox input, #mBox textarea').forEach(e => e.addEventListener('input', genMeta));
+$('#mCopy').addEventListener('click', () => copyText($('#mOut').value));
+genMeta();
+
+function genAnchor(){
+  const u = val('aUrl'), t = val('aText'), r = $('#aRel').value;
+  const relAttr = r ? ` rel="${r}"` : '';
+  $('#aOut').value = (u && t) ? `<a href="${escapeHtml(u)}"${relAttr}>${escapeHtml(t)}</a>` : '';
+}
+['aUrl', 'aText'].forEach(id => $('#' + id).addEventListener('input', genAnchor));
+$('#aRel').addEventListener('change', genAnchor);
+$('#aCopy').addEventListener('click', () => copyText($('#aOut').value));
+
+/* ============ 4. DOMAIN ============ */
+const DOMAIN_RE = /^(?=.{1,253}$)([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,63}$/i;
+function bersihDomain(s){
+  return s.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').split(/[\/?#]/)[0];
+}
+$('#dInput').addEventListener('keydown', e => { if (e.key === 'Enter') $('#dGo').click(); });
+$('#dGo').addEventListener('click', async () => {
+  const d = bersihDomain($('#dInput').value);
+  const out = $('#dOut');
+  if (!DOMAIN_RE.test(d)) { out.innerHTML = '<p class="err">Domain tidak valid.</p>'; return; }
+  out.innerHTML = '<p class="muted">Memeriksa...</p>';
+  try {
+    const type = $('#dType').value;
+    const res = await fetchTimeout(`https://dns.google/resolve?name=${encodeURIComponent(d)}&type=${type}`);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const j = await res.json();
+    if (j.Status === 3) { out.innerHTML = '<p class="err">Domain tidak ditemukan (NXDOMAIN).</p>'; return; }
+    const ans = j.Answer || [];
+    out.innerHTML = ans.length
+      ? `<table><thead><tr><th>Nama</th><th>Tipe</th><th>TTL</th><th>Data</th></tr></thead><tbody>` +
+        ans.map(a => `<tr><td>${escapeHtml(a.name)}</td><td>${a.type}</td><td>${a.TTL}</td><td>${escapeHtml(a.data)}</td></tr>`).join('') +
+        `</tbody></table>`
+      : '<p class="muted">Tidak ada record tipe ini.</p>';
+  } catch {
+    out.innerHTML = '<p class="err">Gagal menghubungi layanan DNS. Periksa koneksi internet atau coba lagi.</p>';
+  }
+});
+
+/* ============ 5. IMAGE TOOLS ============ */
+const imgIn = $('#imgIn'), imgQ = $('#imgQ'), imgF = $('#imgF');
+imgQ.addEventListener('input', () => $('#imgQv').textContent = imgQ.value);
+
+let lastImgUrl = null;
+$('#imgGo').addEventListener('click', async () => {
+  const f = imgIn.files[0];
+  if (!f) return toast('Pilih gambar terlebih dahulu.', 'error');
+
+  const srcUrl = URL.createObjectURL(f);
+  const img = new Image();
+  img.src = srcUrl;
+  try { await img.decode(); }
+  catch { URL.revokeObjectURL(srcUrl); return toast('File bukan gambar yang didukung.', 'error'); }
+
+  const max = +$('#imgW').value || img.width;
+  const s = Math.min(1, max / img.width);
+  const c = document.createElement('canvas');
+  c.width = Math.max(1, Math.round(img.width * s));
+  c.height = Math.max(1, Math.round(img.height * s));
+  const ctx = c.getContext('2d');
+  if (imgF.value === 'image/jpeg') { ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, c.width, c.height); }
+  ctx.drawImage(img, 0, 0, c.width, c.height);
+  URL.revokeObjectURL(srcUrl);
+
+  c.toBlob(blob => {
+    if (!blob) return toast('Gagal memproses gambar.', 'error');
+    const ext = blob.type.split('/')[1].replace('jpeg', 'jpg');
+    if (lastImgUrl) URL.revokeObjectURL(lastImgUrl);
+    lastImgUrl = URL.createObjectURL(blob);
+
+    const prev = $('#imgPrev');
+    prev.src = lastImgUrl; prev.hidden = false;
+    const dl = $('#imgDl');
+    dl.href = lastImgUrl; dl.download = 'hasil.' + ext; dl.hidden = false;
+
+    const info = $('#imgInfo');
+    info.hidden = false;
+    info.textContent =
+      `Ukuran asli ${fmtBytes(f.size)} → ${fmtBytes(blob.size)} · ${c.width}×${c.height}px · ${blob.type}` +
+      (blob.type !== imgF.value ? ' (browser tidak mendukung format terpilih, otomatis PNG)' : '');
+  }, imgF.value, imgQ.value / 100);
+});
+
+/* ============ 6. WEBSITE CHECKER ============ */
+$('#wUrl').addEventListener('keydown', e => { if (e.key === 'Enter') $('#wGo').click(); });
+$('#wGo').addEventListener('click', async () => {
+  let raw = val('wUrl');
+  const out = $('#wOut');
+  if (!raw) return out.innerHTML = '<p class="err">Masukkan URL.</p>';
+  if (!/^https?:\/\//i.test(raw)) raw = 'https://' + raw;
+  let u;
+  try { u = new URL(raw); }
+  catch { return out.innerHTML = '<p class="err">Format URL tidak valid.</p>'; }
+
+  const rows = [
+    ['Host', u.hostname],
+    ['Protokol', u.protocol.replace(':', '').toUpperCase() + (u.protocol === 'https:' ? ' (aman)' : ' (tidak terenkripsi)')],
+    ['Path', u.pathname],
+    ['Panjang URL', u.href.length + ' karakter']
+  ];
+  out.innerHTML = '<p class="muted">Memeriksa...</p>';
+  const t0 = performance.now();
+  let status;
+  try {
+    await fetchTimeout(u.href, { mode: 'no-cors', cache: 'no-store' });
+    status = `<span class="ok">Dapat dijangkau</span> (${Math.round(performance.now() - t0)} ms)`;
+  } catch (err) {
+    const timeout = err && err.name === 'AbortError';
+    status = `<span class="err">${timeout ? 'Waktu habis (timeout)' : 'Tidak dapat dijangkau atau diblokir'}</span>`;
+  }
+  out.innerHTML =
+    `<table><tbody>` +
+    rows.map(([k, x]) => `<tr><td><b>${k}</b></td><td>${escapeHtml(x)}</td></tr>`).join('') +
+    `<tr><td><b>Status jaringan</b></td><td>${status}</td></tr></tbody></table>`;
+});
+
+/* ============ 7. PDF CONVERTER ============ */
+function buatPdf(){
+  if (!window.jspdf) { toast('Library PDF belum dimuat. Periksa koneksi internet.', 'error'); return null; }
+  return new window.jspdf.jsPDF();
+}
+$('#pdfTxtBtn').addEventListener('click', () => {
+  const doc = buatPdf(); if (!doc) return;
+  const lines = doc.splitTextToSize($('#pdfTeks').value || ' ', 180);
+  let y = 20;
+  lines.forEach(l => {
+    if (y > 280) { doc.addPage(); y = 20; }
+    doc.text(l, 15, y);
+    y += 7;
+  });
+  doc.save((val('pdfNama') || 'dokumen') + '.pdf');
+});
+
+function readDataURL(file){
+  return new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(r.result);
+    r.onerror = rej;
+    r.readAsDataURL(file);
+  });
+}
+$('#pdfImgBtn').addEventListener('click', async () => {
+  const files = [...$('#pdfImg').files];
+  if (!files.length) return toast('Pilih minimal satu gambar.', 'error');
+  const doc = buatPdf(); if (!doc) return;
+  try {
+    for (let i = 0; i < files.length; i++) {
+      const data = await readDataURL(files[i]);
+      const img = new Image();
+      img.src = data;
+      await img.decode();
+      if (i > 0) doc.addPage();
+      const scale = Math.min(190 / img.width, 277 / img.height);
+      const w = img.width * scale, h = img.height * scale;
+      const fmt = files[i].type === 'image/png' ? 'PNG' : 'JPEG';
+      doc.addImage(data, fmt, (210 - w) / 2, (297 - h) / 2, w, h);
+    }
+    doc.save('gambar.pdf');
+  } catch {
+    toast('Gagal memproses salah satu gambar.', 'error');
+  }
+});
+
+/* ============ 8. KONVERTER UNIT ============ */
+const UNIT = {
+  panjang: { m: 1, km: 1000, cm: 0.01, mm: 0.001, mi: 1609.344, yd: 0.9144, ft: 0.3048, in: 0.0254 },
+  berat:   { kg: 1, g: 0.001, mg: 0.000001, ton: 1000, lb: 0.45359237, oz: 0.0283495231 },
+  volume:  { l: 1, ml: 0.001, m3: 1000, gal: 3.785411784, cup: 0.236588, tbsp: 0.0147868, tsp: 0.00492892 },
+  data:    { B: 1, KB: 1024, MB: 1024 ** 2, GB: 1024 ** 3, TB: 1024 ** 4 }
+};
+const uCat = $('#uCat'), uFrom = $('#uFrom'), uTo = $('#uTo'), uVal = $('#uVal');
+
+function isiUnit(){
+  const keys = uCat.value === 'suhu' ? ['C', 'F', 'K'] : Object.keys(UNIT[uCat.value]);
+  const opts = keys.map(k => `<option>${k}</option>`).join('');
+  uFrom.innerHTML = opts;
+  uTo.innerHTML = opts;
+  uTo.selectedIndex = keys.length > 1 ? 1 : 0;
+  konversi();
+}
+function formatNum(n){
+  if (!isFinite(n)) return '—';
+  return Number(n.toPrecision(10)).toLocaleString('id-ID', { maximumFractionDigits: 10 });
+}
+function konversi(){
+  const v = parseFloat(uVal.value);
+  if (isNaN(v)) { $('#uOut').textContent = 'Masukkan angka'; return; }
+  let hasil;
+  if (uCat.value === 'suhu') {
+    const c = uFrom.value === 'C' ? v : uFrom.value === 'F' ? (v - 32) * 5 / 9 : v - 273.15;
+    hasil = uTo.value === 'C' ? c : uTo.value === 'F' ? c * 9 / 5 + 32 : c + 273.15;
+  } else {
+    const f = UNIT[uCat.value];
+    hasil = v * f[uFrom.value] / f[uTo.value];
+  }
+  $('#uOut').textContent = `${formatNum(v)} ${uFrom.value} = ${formatNum(hasil)} ${uTo.value}`;
+}
+uCat.addEventListener('change', isiUnit);
+[uFrom, uTo].forEach(el => el.addEventListener('change', konversi));
+uVal.addEventListener('input', konversi);
+
+/* ============ 9. BINARY TRANSLATOR ============ */
+const enc = new TextEncoder(), dec = new TextDecoder();
+const bActs = {
+  teksBiner: t => [...enc.encode(t)].map(b => b.toString(2).padStart(8, '0')).join(' '),
+  teksHex:   t => [...enc.encode(t)].map(b => b.toString(16).padStart(2, '0')).join(' '),
+  binerTeks: t => {
+    const p = t.trim().split(/\s+/).filter(Boolean);
+    if (!p.length) return '';
+    if (p.some(x => !/^[01]{1,8}$/.test(x))) throw new Error('biner hanya boleh 0 dan 1, maksimal 8 digit per byte.');
+    return dec.decode(Uint8Array.from(p, x => parseInt(x, 2)));
+  },
+  hexTeks: t => {
+    const h = t.replace(/\s+/g, '');
+    if (!h) return '';
+    if (!/^([0-9a-f]{2})+$/i.test(h)) throw new Error('hex tidak valid (harus pasangan 2 digit).');
+    return dec.decode(Uint8Array.from(h.match(/../g), x => parseInt(x, 16)));
+  }
+};
+$('#bGo').addEventListener('click', () => {
+  try { $('#bOut').value = bActs[$('#bMode').value]($('#bIn').value); }
+  catch (e) { $('#bOut').value = ''; toast('Error: ' + e.message, 'error'); }
+});
+
+/* ============ INISIALISASI ============ */
+renderTeks();
+isiUnit();
+showTool();
+</script>
+</body>
+</html>
